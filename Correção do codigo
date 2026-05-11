@@ -1,0 +1,42 @@
+let caixas = [
+  'Papel',
+  'Clips',
+  'Grampo',
+  'Elastico',
+  'Caneta',
+  'Lapis',
+  'Borracha',
+  'Tesoura',
+  'ERRO',
+  'Tinta'
+];
+
+function iniciarConferencia() {
+
+  let relatorio = document.getElementById("relatorio");
+
+  relatorio.innerHTML = "";
+
+  for (let i = 0; i < caixas.length; i++) {
+
+    if (i == 4 || i == 7) {
+      continue;
+    }
+
+    if (caixas[i] == "ERRO") {
+
+      relatorio.innerHTML +=
+        "<p class='erro'>ERRO encontrado na caixa "
+        + (i + 1) + "</p>";
+
+      break;
+    }
+
+    relatorio.innerHTML +=
+      "<div class='caixa'>Caixa conferida: "
+      + (i + 1)
+      + ": "
+      + caixas[i]
+      + "</div>";
+  }
+}
